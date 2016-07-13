@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  >
+
+    <ImageView
+        android:id="@+id/ivSongDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:elevation="5dp"
+        android:src="@drawable/song_2" />
+
+    <ScrollView
+        android:layout_below="@id/ivSongDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
+        <TextView
+            android:fontFamily="serif"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="Particles are the queens of the bare definition.Fatalis finiss ducunt ad mens.The tantra is an inward saint.Sauté thin onions in a fine-mesh strainer with fish sauce for about an hour to upgrade their asperity.Omnia de castus calceus, transferre lactea!You have to remain, and avoid sorrow by your existing.With lobsters drink mint sauce.The small fish greedily trades the sea.The transformator meets galaxy like an interstellar species.Hercle, mensa domesticus!, brevis pars!Galatae, navis, et demolitione.A falsis, fluctui noster index.Heu, germanus messor!Abnobas observare in chremisa!Sunt magisteres imperium alter, emeritis capioes.Eheu, hydra!Sunt sectames amor festus, nobilis triticumes.Oyster soup is just not the same without brown sugar and puréed smooth cabbages.Danistas sunt menss de peritus imber.Nuptias accelerare!Wow! Pieces o' urchin are forever scurvy.Xiphias observares, tanquam azureus clinias.Cum tumultumque studere, omnes homoes imperium festus, clemens nomenes.Heu, bubo!Clemens compaters ducunt ad calceus.Teres, fidelis devirginatos acceleratrix manifestum de altus, magnum terror."
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tvLyrics" />
+    </ScrollView>
+
+</RelativeLayout>

@@ -2,6 +2,7 @@ package ashdod.tomerbu.edu.recyclerdemos;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,15 +17,17 @@ import ashdod.tomerbu.edu.recyclerdemos.models.Song;
 
 public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder> {
 
+    private final FragmentManager fm;
     private LayoutInflater inflater;
     private Context context;
     private ArrayList<Song> data;
 
     //constructor that takes inflater, and optionally the data
-    public SongAdapter(Context context, ArrayList<Song> data) {
+    public SongAdapter(Context context, ArrayList<Song> data, FragmentManager fm) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
         this.data = data;
+        this.fm = fm;
     }
 
     //3.2.2 Create a view holder using inflater
@@ -66,7 +69,7 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(context, SongDetailsActivity.class);
+            /*Intent intent = new Intent(context, SongDetailsActivity.class);
 
             //
             int position = getAdapterPosition();
@@ -74,7 +77,14 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder
             Song s = data.get(position);
             intent.putExtra(Constants.EXTRA_SONG, s);
 
-            context.startActivity(intent);
+            context.startActivity(intent);*/
+
+            int position = getAdapterPosition();
+
+
+            Song s = data.get(position);
+
+            fm.beginTransaction().replace(R.id.container, DetailsFragment.newInstance(s)).addToBackStack("List").commit();
         }
     }
 }
